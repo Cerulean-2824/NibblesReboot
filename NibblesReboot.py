@@ -20,8 +20,8 @@ pygame.display.set_caption('Nibbles Reboot')
 
 clock = pygame.time.Clock()
 
-dethPath = str(pathlib.Path(__file__).parent / "deth.wav")
-logoPath = str(pathlib.Path(__file__).parent / "happy.png")
+dethPath = str(pathlib.Path(__file__).parent / "Media/deth.wav")
+logoPath = str(pathlib.Path(__file__).parent / "Media/happy.png")
 deth = pygame.mixer.Sound(dethPath)
 logo = pygame.image.load(logoPath)
 newLogo = pygame.transform.scale(logo, (250, 250))
@@ -100,6 +100,7 @@ def gameLoop():
                         game_over = True
                         game_close = False
                     if event.key == pygame.K_RETURN:
+                        pygame.mixer.pause()
                         gameLoop()
 
         for event in pygame.event.get():
