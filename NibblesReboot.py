@@ -2,6 +2,7 @@ import random
 import time
 import pathlib
 import pygame
+import csv
 
 pygame.init()
 
@@ -87,6 +88,13 @@ def gameLoop():
 
         while game_close is True:
             dis.fill(black)
+            # ListBoard = []
+            # Leaderboard = pathlib.Path(__file__).parent / 'Leaderboard.csv'
+            # with open (Leaderboard, 'rb') as csvfile:
+            #     csvreding = csv.reader(csvfile, delimiter=' ', quotechar="|")
+            #     for row in csvreding:
+            #         toBoard = ', '.join(row)
+            #         ListBoard.append(toBoard)
             firstText = ["Game Over!", 'press "Enter" to play again', 'press "Esc" to quit']
             for i, t in enumerate(firstText):
                 text = font_style.render(t, True, red) # Visual transformation of text
